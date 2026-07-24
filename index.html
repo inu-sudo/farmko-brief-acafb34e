@@ -128,6 +128,17 @@ a.run:hover,a.run:focus-visible{background:var(--surface-2)}
   border-bottom:1px solid var(--line)}
 .month-group a.run:first-of-type{border-top:none}
 .month-group + .month-group{margin-top:2px}
+/* dataviz — inline SVG charts (ui-ux-pro-max) */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:0 0 18px}
+.chart-title{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-deep);font-weight:700;margin-bottom:10px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--sans)}
+.chart .c-lbl{fill:var(--ink-soft);font-size:12.5px}
+.chart .c-val{font-size:12px;font-weight:700}
+.chart .c-val.up{fill:var(--up)}.chart .c-val.down{fill:var(--down)}
+.chart .c-axis{fill:var(--ink-soft);font-size:10.5px}
+.chart-legend{display:flex;gap:16px;margin-top:8px;font-size:11.5px;color:var(--ink-soft)}
+.chart-legend b{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
 .tag{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;
   background:color-mix(in srgb,var(--navy-2) 18%,transparent);color:var(--navy-2)}
 .empty{color:var(--ink-soft);font-size:14px;padding:14px 0;border-top:1px solid var(--line)}
@@ -149,6 +160,7 @@ a:focus-visible{outline:2px solid var(--navy-2);outline-offset:2px}
 <section class="key"><div class="eyebrow">오늘의 핵심 이슈</div><ol><li>후티가 홍해에서 사우디 유조선 2척(Encelia·Layla)을 피격하고 사우디 항만 해상봉쇄를 통보했다. 바브엘만데브 통항 차질이 당사 걸프(소하르·코르파칸)·인도 서안 항로로 번진다.</li><li>브렌트유가 100.69달러로 5월 말 이후 처음 100달러를 넘었고(+7.04%), 걸프·홍해 전쟁위험보험료는 선가의 3~5%까지 뛰었다. 벙커와 항차 원가가 동반 상승한다.</li><li>SCFI 신규 지수는 오늘 16시 발표 예정이다(직전 3,080p, 3주 연속 하락). 한국발 극동–인도/파키스탄 PSS(TEU당 US$300)는 8월 3일 발효한다.</li></ol></section>
 <div class="context"><b>당사 서비스 항로</b> — 부산발 → 인도 서안(문드라·나바셰바·피파바브)·동안(콜카타·첸나이·카투팔리)·카라치, 중동(소하르·코르파칸) · T/S 포트클랑(+9일). 자체 FES(FAGL) 및 부킹 파트너 우성마리타임·벤라인·늘푸른해운항공 등. PLISM 기준 근일 항차 X-PRESS PHOENIX(26025W). 유의: 첸나이(INMAA) T/S 부킹중단 구간·일부 항차 BLANK SAILING, 한국발 극동–인도/파키스탄 PSS US$300/TEU 8/3 발효 예정.</div>
 <div class="stats"><div class="stat"><div class="lbl">브렌트유(9월물)</div><div class="val ">100.69 $/bbl</div><div class="note">▲ +7.04%</div></div><div class="stat"><div class="lbl">WTI(9월물)</div><div class="val ">92.19 $/bbl</div><div class="note">▲ +6.17%</div></div><div class="stat"><div class="lbl">Drewry WCI</div><div class="val ">4,374 $/FEU</div><div class="note">▼ -4.0%</div></div><div class="stat"><div class="lbl">SCFI</div><div class="val ">3,080 p</div><div class="note">▼ 3주 연속 하락</div></div><div class="stat"><div class="lbl">걸프·홍해 전쟁위험보험료</div><div class="val ">선가 3~5%</div><div class="note">▲ 0.2~0.5% → 3~5%</div></div></div>
+<div class="chart"><div class="chart-title">운임지수 증감률 (전주 대비, %)</div><svg viewBox="0 0 600 166" role="img" aria-label="운임지수 증감률 (전주 대비, %)"><line x1="350.0" y1="8" x2="350.0" y2="158" stroke="var(--line)" stroke-width="1"/><text class="c-lbl" x="150" y="27.0" text-anchor="end">브렌트유(9월물)</text><rect x="350.0" y="14.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="27.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="57.0" text-anchor="end">WTI(9월물)</text><rect x="350.0" y="44.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="57.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="87.0" text-anchor="end">Drewry WCI</text><rect x="350.0" y="74.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="87.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="117.0" text-anchor="end">SCFI</text><rect x="350.0" y="104.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="117.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="147.0" text-anchor="end">걸프·홍해 전쟁위험보험료</text><rect x="350.0" y="134.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="147.0" text-anchor="start">+7.00%</text></svg><div class="chart-legend"><span><b style="background:var(--up)"></b>상승</span><span><b style="background:var(--down)"></b>하락</span></div></div>
 <section class="sec">
 <div class="sec-h"><span class="roman">Ⅰ</span><h2>지정학 · 안보</h2></div>
 <div class="eyebrow" style="margin:8px 0 6px">홍해 · 후티 · 걸프</div>
