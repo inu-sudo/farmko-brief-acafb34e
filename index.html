@@ -118,6 +118,16 @@ a.run:hover,a.run:focus-visible{background:var(--surface-2)}
 .run .m{font-size:12px;color:var(--ink-soft);margin-top:5px;font-variant-numeric:tabular-nums}
 .run .open{align-self:center;margin-left:auto;color:var(--navy-2);font-weight:800;font-size:12.5px;white-space:nowrap}
 @media (prefers-reduced-motion:reduce){a.run{transition:none}}
+/* dedicated, scalable history panel */
+.count{font-size:12px;font-weight:800;color:var(--navy-2);white-space:nowrap;
+  background:color-mix(in srgb,var(--navy-2) 15%,transparent);padding:2px 10px;border-radius:999px}
+.history-scroll{max-height:540px;overflow-y:auto;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--surface);padding:0 14px}
+.month-h{position:sticky;top:0;background:var(--surface);padding:11px 0 7px;margin:0;z-index:1;
+  font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--sage-deep);
+  border-bottom:1px solid var(--line)}
+.month-group a.run:first-of-type{border-top:none}
+.month-group + .month-group{margin-top:2px}
 .tag{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;
   background:color-mix(in srgb,var(--navy-2) 18%,transparent);color:var(--navy-2)}
 .empty{color:var(--ink-soft);font-size:14px;padding:14px 0;border-top:1px solid var(--line)}
@@ -168,8 +178,8 @@ a:focus-visible{outline:2px solid var(--navy-2);outline-offset:2px}
 <div class="sec-h"><span class="roman">Ⅴ</span><h2>단신 및 공지</h2></div>
 <article class="item"><div class="item-head"><h4>커버리지 체크 — 금일 유효 보도 없음 항목</h4></div><div class="item-meta">자체 점검 · 07-24</div><ul class="bullets"><li>⑨ 한국 항만·수출 개별 동향: 36시간 이내 신규 보도 없음 (관세 이슈는 Ⅳ 참조).</li><li>⑩ 당사 부킹 파트너 선사(우성마리타임·벤라인·늘푸른해운항공·스타오션라인·코리아쉬핑·위동해운·RSSA·KPS해운): 36시간 이내 개별 보도 없음.</li></ul></article>
 </section>
-<div class="divider"><h2>실행 기록 · Run history</h2></div>
-<a class="run" href="https://inu-sudo.github.io/farmko-brief-acafb34e/reports/Farmko_Briefing_2026-07-24.pdf" target="_blank" rel="noopener"><div class="date">2026-07-24<span class="tag">baseline</span></div><div class="rbody"><p class="sum">호르무즈 해협이 사실상 봉쇄된 가운데 후티 반군이 홍해 봉쇄 선언 후 처음으로 사우디 유조선 2척을 공격해 두 관문이 동시에 막혔다.</p><p class="sub">브렌트유는 배럴당 100달러를 돌파했고 CMA CGM·머스크는 중동發 긴급 유류할증료를 잇달아 도입했다. · 미국이 24일 0시부로 한국에 강제노동 관세 12.5%를 발효해 한미 15% 상한 합의가 흔들릴 조짐이다.</p><div class="m">스윕 55 · 채택 11 · 최근 36시간</div></div><span class="open">PDF 열기 ↗</span></a>
+<div class="divider"><h2>실행 기록 · Run history</h2><span class="count">1건</span></div>
+<div class="history-scroll"><div class="month-group"><div class="month-h">2026년 7월</div><a class="run" href="https://inu-sudo.github.io/farmko-brief-acafb34e/reports/Farmko_Briefing_2026-07-24.pdf" target="_blank" rel="noopener"><div class="date">2026-07-24<span class="tag">baseline</span></div><div class="rbody"><p class="sum">호르무즈 해협이 사실상 봉쇄된 가운데 후티 반군이 홍해 봉쇄 선언 후 처음으로 사우디 유조선 2척을 공격해 두 관문이 동시에 막혔다.</p><p class="sub">브렌트유는 배럴당 100달러를 돌파했고 CMA CGM·머스크는 중동發 긴급 유류할증료를 잇달아 도입했다. · 미국이 24일 0시부로 한국에 강제노동 관세 12.5%를 발효해 한미 15% 상한 합의가 흔들릴 조짐이다.</p><div class="m">스윕 55 · 채택 11 · 최근 36시간</div></div><span class="open">PDF 열기 ↗</span></a></div></div>
 <div class="foot"><span class="brand">㈜팜코지엘에스 · FARMKO GLS</span><div class="tnum" style="margin-top:4px">매체 55개 스윕 · 채택 11건 · 최근 36시간 보도 기준 (지수·항만 데이터는 최신 발표분 기준일 별도 표기)</div><div class="qa">품질 점검: superpowers · ui-ux-pro-max · stop-slop 적용 · 36시간 준수</div><div class="qa">이 페이지는 매 실행마다 자동 갱신됩니다.</div></div>
 </div>
 </body>
