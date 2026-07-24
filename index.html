@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>FARMKO GLS 일일 브리핑 에이전트 — 2026-07-24</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#EEF2F6; --surface:#FFFFFF; --surface-2:#F0F5EC; --box:#EAF1F8;
+  --ink:#1A2733; --ink-soft:#51616F; --line:#DBE3EB;
+  --navy:#1F4E79; --navy-2:#2E74B5; --sage:#A9C58F; --sage-deep:#5E7A45;
+  --up:#1E7A34; --down:#C0392B; --attn:#B7791F;
+  --sans:"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR","Segoe UI",system-ui,-apple-system,sans-serif;
+  --maxw:920px; --r:12px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0D1520; --surface:#15212F; --surface-2:#18271F; --box:#16283C;
+  --ink:#E7EEF6; --ink-soft:#9FB2C4; --line:#27394D;
+  --navy:#5B9BD5; --navy-2:#7FB0E0; --sage:#8FB27A; --sage-deep:#B7D3A0;
+  --up:#4FB477; --down:#E5736A; --attn:#E0A94A;
+}}
+:root[data-theme="dark"]{
+  --bg:#0D1520; --surface:#15212F; --surface-2:#18271F; --box:#16283C;
+  --ink:#E7EEF6; --ink-soft:#9FB2C4; --line:#27394D;
+  --navy:#5B9BD5; --navy-2:#7FB0E0; --sage:#8FB27A; --sage-deep:#B7D3A0;
+  --up:#4FB477; --down:#E5736A; --attn:#E0A94A;
+}
+:root[data-theme="light"]{
+  --bg:#EEF2F6; --surface:#FFFFFF; --surface-2:#F0F5EC; --box:#EAF1F8;
+  --ink:#1A2733; --ink-soft:#51616F; --line:#DBE3EB;
+  --navy:#1F4E79; --navy-2:#2E74B5; --sage:#A9C58F; --sage-deep:#5E7A45;
+  --up:#1E7A34; --down:#C0392B; --attn:#B7791F;
+}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:24px 18px 64px}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* agent control card */
+.agent{background:linear-gradient(135deg,color-mix(in srgb,var(--navy) 14%,var(--surface)),var(--surface));
+  border:1px solid var(--line);border-left:5px solid var(--sage-deep);border-radius:var(--r);padding:20px 22px}
+.agent .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.agent .kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-deep);font-weight:700;width:100%}
+.agent h1{margin:0;font-size:23px;font-weight:800;color:var(--navy);letter-spacing:-.01em;text-wrap:balance}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;padding:3px 11px;border-radius:999px;
+  background:color-mix(in srgb,var(--up) 20%,transparent);color:var(--up);border:1px solid color-mix(in srgb,var(--up) 45%,transparent)}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--up);box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 25%,transparent)}
+.agent .desc{margin:10px 0 14px;color:var(--ink-soft);font-size:14px;max-width:66ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 13px}
+.fact .k{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--sage-deep);font-weight:700}
+.fact .v{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:3px;color:var(--ink)}
+
+/* section divider */
+.divider{display:flex;align-items:center;gap:12px;margin:30px 0 14px}
+.divider h2{margin:0;font-size:14px;font-weight:800;letter-spacing:.05em;color:var(--sage-deep);text-transform:uppercase;white-space:nowrap}
+.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* briefing masthead */
+.mast{padding:16px 22px;border-radius:var(--r);
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-bottom:3px solid var(--sage)}
+:root[data-theme="dark"] .mast,@media (prefers-color-scheme:dark){.mast{color:#0D1520}}
+.mast h3{margin:0;font-size:20px;font-weight:800;text-wrap:balance}
+.mast .meta{font-size:13px;opacity:.92;font-variant-numeric:tabular-nums;margin-top:2px}
+
+.key{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--navy);
+  border-radius:var(--r);padding:16px 20px;margin:14px 0 16px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-deep);font-weight:700;margin-bottom:8px}
+.key ol{margin:0;padding-left:1.1em}.key li{margin:4px 0;font-weight:600}
+.key li::marker{color:var(--navy-2);font-weight:800}
+.context{background:var(--box);border:1px solid color-mix(in srgb,var(--navy-2) 35%,transparent);
+  border-radius:var(--r);padding:12px 16px;margin:0 0 22px;font-size:14px}.context b{color:var(--navy)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:0 0 26px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.stat .lbl{font-size:12px;color:var(--ink-soft);margin-bottom:4px}
+.stat .val{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+.up{color:var(--up)}.down{color:var(--down)}.stat .note{font-size:11px;color:var(--ink-soft);margin-top:2px}
+.sec{margin:0 0 22px}
+.sec-h{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding:8px 14px;
+  background:color-mix(in srgb,var(--sage) 32%,var(--surface));border-radius:8px}
+.sec-h .roman{font-weight:800;color:var(--sage-deep);font-size:18px}
+.sec-h h2{margin:0;font-size:17px;font-weight:800;color:var(--navy)}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:0 0 10px}
+.item-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.item-head h4{margin:0;font-size:16px;font-weight:700;color:var(--ink);text-wrap:balance}
+.chip{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.chip.attn{background:color-mix(in srgb,var(--attn) 22%,transparent);color:var(--attn);border:1px solid color-mix(in srgb,var(--attn) 45%,transparent)}
+.item-meta{font-size:12.5px;color:var(--navy-2);margin:3px 0 8px;font-variant-numeric:tabular-nums}
+.bullets{margin:0 0 8px;padding-left:1.15em}.bullets li{margin:3px 0;color:var(--ink-soft)}
+.impl{font-size:14px;padding:8px 12px;background:var(--surface-2);border-radius:8px;margin:6px 0}.impl b{color:var(--navy)}
+.src{display:inline-block;margin-top:6px;font-size:12px;color:var(--navy-2);text-decoration:none;word-break:break-all}
+.src:hover,.src:focus-visible{text-decoration:underline}.brief{margin:2px 0;color:var(--ink-soft)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);margin:6px 0 14px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{background:var(--sage);color:var(--navy);font-weight:800;padding:8px 12px;text-align:left;white-space:nowrap}
+:root[data-theme="dark"] th,@media (prefers-color-scheme:dark){th{color:#0D1520}}
+td{padding:8px 12px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* run history */
+.run{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.run:first-of-type{border-top:none}
+.run .date{min-width:104px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
+.run .rbody{flex:1;min-width:0}
+.run .sum{margin:0;color:var(--ink);font-size:14px;font-weight:600}
+.run .sub{margin:3px 0 0;color:var(--ink-soft);font-size:13px}
+.run .m{font-size:12px;color:var(--ink-soft);margin-top:5px;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;
+  background:color-mix(in srgb,var(--navy-2) 18%,transparent);color:var(--navy-2)}
+.empty{color:var(--ink-soft);font-size:14px;padding:14px 0;border-top:1px solid var(--line)}
+
+.foot{border-top:2px solid var(--sage);margin-top:30px;padding-top:14px;font-size:12.5px;color:var(--ink-soft);text-align:center}
+.foot .brand{font-weight:800;color:var(--navy)}
+.qa{margin-top:8px;font-size:11.5px;color:var(--ink-soft);text-align:center}
+a:focus-visible{outline:2px solid var(--navy-2);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+@media (max-width:560px){.agent h1{font-size:19px}.wrap{padding:16px 12px 48px}.run .date{min-width:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="agent"><div class="top"><div class="kicker">Scheduled Agent · 예약 실행 에이전트</div><h1>Farmko 일일 해운·물류 브리핑 에이전트</h1><span class="pill"><span class="dot"></span>활성</span></div><p class="desc">부산발 인도 아대륙·중동 항로(FES/FAGL)를 대상으로, 최근 36시간 이내 국내외 해운·물류 뉴스를 심층 수집·선별해 하우스 포맷 브리핑(PDF)과 이 웹 페이지를 자동으로 생성합니다. 매 실행마다 superpowers · ui-ux-pro-max · stop-slop 스킬을 적용합니다.</p><div class="facts"><div class="fact"><div class="k">스케줄</div><div class="v">매일 09:00 (KST)</div></div><div class="fact"><div class="k">다음 실행</div><div class="v">2026-07-25 09:00 KST</div></div><div class="fact"><div class="k">최근 브리핑</div><div class="v">2026-07-24</div></div><div class="fact"><div class="k">실행 방식</div><div class="v">자동: Windows 예약 작업 (헤드리스) · 수동: 데스크톱 앱에서 /farmko-briefing</div></div></div></section>
+<div class="divider"><h2>최신 브리핑</h2></div>
+<div class="mast"><h3>일일 해운·물류 브리핑</h3><div class="meta">작성일 2026-07-24 · 기준시각(KST) 2026-07-24 09:00 · 최근 36시간</div></div>
+<section class="key"><div class="eyebrow">오늘의 핵심 이슈</div><ol><li>호르무즈 해협이 사실상 봉쇄된 가운데 후티 반군이 홍해 봉쇄 선언 후 처음으로 사우디 유조선 2척을 공격해 두 관문이 동시에 막혔다.</li><li>브렌트유는 배럴당 100달러를 돌파했고 CMA CGM·머스크는 중동發 긴급 유류할증료를 잇달아 도입했다.</li><li>미국이 24일 0시부로 한국에 강제노동 관세 12.5%를 발효해 한미 15% 상한 합의가 흔들릴 조짐이다.</li></ol></section>
+<div class="context"><b>당사 서비스 항로</b> — 부산발 → 인도서안(문드라INMUN·나바셰바INNSA·피파바브INPAV)·인도동안(콜카타INCCU·첸나이INMAA·카투팔리INKAT)·파키스탄(카라치PKKHI)·중동(소하르OMSOH·칼리파AEKLF) / T/S 포트클랑(MYPKG, +9일) / FES-FAGL 자체 서비스 + 에미레이츠쉬핑라인·판다로지스틱스 대리점 — ※ PLISM 세션 미연결로 금일은 company_context.md 기준항로표(baseline) 적용, 실시간 스케줄 아님.</div>
+<section class="sec">
+<div class="sec-h"><span class="roman">Ⅰ</span><h2>지정학 · 안보</h2></div>
+<div class="eyebrow" style="margin:8px 0 6px">호르무즈 · 걸프</div>
+<article class="item"><div class="item-head"><span class="chip attn">주목</span><h4>호르무즈 통항 붕괴 지속, 24시간 새 유조선 3척 피격</h4></div><div class="item-meta">TankerMap · Windward (종합) · 07-23</div><ul class="bullets"><li>해협 남부 회랑(쿰자르·리마 인근)에서 24시간 동안 유조선 3척이 피격돼 통항이 이란 통제하 북부 회랑으로 거의 전량 이동했다.</li><li>7월 19일 기준 해협 통과 선박은 하루 15척으로, 평시 88척의 17% 수준에 그친다.</li><li>이란 측 협상 대표 갈리바프는 &#x27;해협은 전쟁 이전 상태로 돌아가지 않는다&#x27;며 8월 17일 무료 통항 유예 종료 후 통항료 부과를 예고했다.</li></ul><div class="impl"><b>→ 시사점</b> 칼리파·소하르 착 화물은 우회·지연이 상시화된다. 현지 반입 리드타임을 여유 있게 잡아야 한다.</div><a class="src" href="https://tankermap.com/analytics/straits/hormuz" target="_blank" rel="noopener">출처: https://tankermap.com/analytics/straits/hormuz</a></article>
+<div class="eyebrow" style="margin:8px 0 6px">홍해 · 후티</div>
+<article class="item"><div class="item-head"><span class="chip attn">주목</span><h4>후티, 해상봉쇄 선언 후 첫 사우디 유조선 2척 공격</h4></div><div class="item-meta">MBC · 07-23 07:52</div><ul class="bullets"><li>후티 반군이 사우디 알슈카이크 남서쪽 약 130km 해상에서 유조선 &#x27;엔셀라&#x27;·&#x27;라이리아&#x27;호를 미사일·드론으로 공격했다고 주장했다.</li><li>피격 선박에서 화재가 발생해 진화 작업이 진행됐으며 인명·환경 피해는 보고되지 않았다.</li><li>사우디를 겨냥한 해상봉쇄 선언 이후 민간 선박에 대한 첫 실제 공격이다.</li></ul><div class="impl"><b>→ 시사점</b> 홍해·바브엘만데브 통과 화물은 재차 희망봉 우회 검토 대상이 된다.</div><a class="src" href="https://imnews.imbc.com/news/2026/world/article/6839469_36925.html" target="_blank" rel="noopener">출처: https://imnews.imbc.com/news/2026/world/article/6839469_36925.html</a></article>
+<article class="item"><div class="item-head"><h4>IMO, 홍해 공격 규탄...선원 안전·공급망 위협 경고</h4></div><div class="item-meta">파이낸셜뉴스 · 07-24 04:18</div><ul class="bullets"><li>IMO 사무총장 아르세니오 도밍게스는 이번 공격을 &#x27;용납할 수 없다&#x27;며 국제 해상 안전과 공급망 안정성을 위협한다고 밝혔다.</li><li>IMO는 선사들에 항로 통과 전 위험평가 실시를 권고했고, 유일한 해법은 &#x27;긴장 완화&#x27;라고 강조했다.</li></ul><a class="src" href="https://www.fnnews.com/news/202607240418015617" target="_blank" rel="noopener">출처: https://www.fnnews.com/news/202607240418015617</a></article>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="roman">Ⅱ</span><h2>운임 · 유가</h2></div>
+<div class="eyebrow" style="margin:8px 0 6px">긴급 할증료 · 연료비</div>
+<article class="item"><div class="item-head"><span class="chip attn">주목</span><h4>CMA CGM·머스크, 중동發 긴급 유류할증료 도입</h4></div><div class="item-meta">AGBI · 07-22 (발표기준)</div><ul class="bullets"><li>CMA CGM은 호르무즈 리스크로 급등한 연료비를 반영해 TEU당 75~165달러의 긴급 유류할증료를 8월부터 별도 공지 시까지 부과한다.</li><li>푸자이라 벙커유(380cst)는 7월 21일 톤당 813달러로, 6월 12일 고점(1,275달러) 이후 재상승 국면에 들어섰다.</li><li>머스크는 3월 도입한 긴급 벙커할증에 이어 중동 관련 운임의 최소 15%를 연료할증(FSC)으로 반영 중이다.</li></ul><div class="impl"><b>→ 시사점</b> 칼리파·소하르 착 화물은 할증 고지 시점과 발효일을 선사별로 개별 확인해야 한다.</div><a class="src" href="https://www.agbi.com/shipping/2026/07/hormuz-risk-forces-frances-cma-cgm-to-impose-fuel-surcharge/" target="_blank" rel="noopener">출처: https://www.agbi.com/shipping/2026/07/hormuz-risk-forces-frances-cma-cgm-to-impose-fuel-surcharge/</a></article>
+<div class="eyebrow" style="margin:10px 0 4px">주요 운임 · 유가 지수</div><div class="tbl-wrap"><table><thead><tr><th>지수</th><th>최근</th><th>직전</th><th>증감</th><th>기준일</th></tr></thead><tbody><tr><td class="">SCFI 종합</td><td class="">3,184.82</td><td class="">3,326.87</td><td class="down">▼ -4.3%</td><td class="">07-10 (최신 발표분)</td></tr><tr><td class="">SCFI 중동</td><td class="">$4,199/TEU</td><td class="">$4,392/TEU</td><td class="down">▼ -4.4%</td><td class="">07-10</td></tr><tr><td class="">Drewry WCI 종합</td><td class="">$4,374/FEU</td><td class="">$4,558/FEU</td><td class="down">▼ -4.0%</td><td class="">07-23</td></tr><tr><td class="">Brent 원유</td><td class="">$100.65/bbl</td><td class="">$94.07/bbl</td><td class="up">▲ +7.0%</td><td class="">07-23</td></tr><tr><td class="">Fujairah 벙커유(380cst)</td><td class="">$813/MT</td><td class="">$730/MT</td><td class="up">▲ +11.4%</td><td class="">07-21</td></tr></tbody></table></div>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="roman">Ⅲ</span><h2>항로 · 항만</h2></div>
+<div class="eyebrow" style="margin:8px 0 6px">인도</div>
+<article class="item"><div class="item-head"><span class="chip attn">주목</span><h4>문드라 · 나바셰바 정체 완화, 대기시간 1~3일대로 축소</h4></div><div class="item-meta">Kuehne+Nagel 항만운영 업데이트 · 07-15~21 (주간)</div><ul class="bullets"><li>문드라 7일 평균 대기시간은 1.77일로, 연초 8~10일 정점 대비 크게 줄었다.</li><li>나바셰바는 인접 민간 터미널發 물량 전이와 도로 통행 제한으로 게이트 반입 대기가 최대 20시간까지 늘어난 상태다.</li></ul><div class="impl"><b>→ 시사점</b> 서안 도착분은 여유가 생겼지만 나바셰바 내륙 반출은 별도 버퍼가 필요하다.</div><a class="src" href="https://mykn.kuehne-nagel.com/news/article/port-operational-updates-from-21-07-2026" target="_blank" rel="noopener">출처: https://mykn.kuehne-nagel.com/news/article/port-operational-updates-from-21-07-2026</a></article>
+<div class="eyebrow" style="margin:8px 0 6px">포트클랑 T/S</div>
+<article class="item"><div class="item-head"><span class="chip attn">주목</span><h4>포트클랑 정체지수 0.18일, 연초 대비 큰 폭 개선</h4></div><div class="item-meta">Portcast 실시간 대시보드 · 07-24 (실시간 조회)</div><ul class="bullets"><li>포트클랑 항만정체지수는 중간 대기시간 0.18일로, 1월 웨스트포트 5~6일 적체 국면 대비 크게 개선됐다.</li><li>포트클랑청은 노스포트-웨스트포트 간 선박 분산 배정으로 병목을 관리 중이며, 상반기 물동량은 전년 대비 6% 늘어난 711만TEU를 기록했다.</li></ul><div class="impl"><b>→ 시사점</b> T/S 리드타임(+9일)은 안정권이나, 호르무즈발 우회 물량이 몰리면 재차 정체될 수 있다.</div><a class="src" href="https://www.portcast.io/port-congestion/port-klang" target="_blank" rel="noopener">출처: https://www.portcast.io/port-congestion/port-klang</a></article>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="roman">Ⅳ</span><h2>선사 · 정책</h2></div>
+<div class="eyebrow" style="margin:8px 0 6px">관세 · 통상정책</div>
+<article class="item"><div class="item-head"><span class="chip attn">주목</span><h4>미국, 24일부로 한국에 강제노동 관세 12.5% 발효</h4></div><div class="item-meta">파이낸셜뉴스 · 07-24 08:02</div><ul class="bullets"><li>USTR은 무역법 301조를 근거로 강제노동 생산품 차단이 미흡한 60개국에 10~12.5% 관세를 24일 0시 1분(한국시간 24일 오후 1시 1분)부터 발효했다. 이미 선적된 화물은 28일 0시 1분까지 유예된다.</li><li>한국·일본은 기존 MFN 관세와 합산해 최소 12.5%를 적용받으며, 조만간 발표될 &#x27;과잉생산 관세&#x27;까지 더해지면 한미 협상으로 확보한 15% 상한이 흔들릴 수 있다는 우려가 나온다.</li><li>USTR 대표 제이미슨 그리어는 기존 양자 무역협정을 존중하겠다고 밝혀 전면 재협상 가능성은 낮게 점쳐진다.</li></ul><div class="impl"><b>→ 시사점</b> 대미 항로 화주는 강제노동 준수 증빙을 사전 확보해 원산지 분쟁 소지를 줄여야 한다.</div><a class="src" href="https://www.fnnews.com/news/202607240759518955" target="_blank" rel="noopener">출처: https://www.fnnews.com/news/202607240759518955</a></article>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="roman">Ⅴ</span><h2>단신 및 공지</h2></div>
+<article class="item"><div class="item-head"><h4>커버리지 체크 — 금일 유효 보도 없음 항목</h4></div><div class="item-meta">자체 점검 · 07-24</div><ul class="bullets"><li>⑨ 한국 항만·수출 개별 동향: 36시간 이내 신규 보도 없음 (관세 이슈는 Ⅳ 참조).</li><li>⑩ 당사 부킹 파트너 선사(우성마리타임·벤라인·늘푸른해운항공·스타오션라인·코리아쉬핑·위동해운·RSSA·KPS해운): 36시간 이내 개별 보도 없음.</li></ul></article>
+</section>
+<div class="divider"><h2>실행 기록 · Run history</h2></div>
+<div class="run"><div class="date">2026-07-24<span class="tag">baseline</span></div><div class="rbody"><p class="sum">호르무즈 해협이 사실상 봉쇄된 가운데 후티 반군이 홍해 봉쇄 선언 후 처음으로 사우디 유조선 2척을 공격해 두 관문이 동시에 막혔다.</p><p class="sub">브렌트유는 배럴당 100달러를 돌파했고 CMA CGM·머스크는 중동發 긴급 유류할증료를 잇달아 도입했다. · 미국이 24일 0시부로 한국에 강제노동 관세 12.5%를 발효해 한미 15% 상한 합의가 흔들릴 조짐이다.</p><div class="m">스윕 55 · 채택 11 · 최근 36시간 · PDF: Farmko_Briefings/2026-07-24/Farmko_Briefing_2026-07-24.pdf</div></div></div>
+<div class="foot"><span class="brand">㈜팜코지엘에스 · FARMKO GLS</span><div class="tnum" style="margin-top:4px">매체 55개 스윕 · 채택 11건 · 최근 36시간 보도 기준 (지수·항만 데이터는 최신 발표분 기준일 별도 표기)</div><div class="qa">품질 점검: superpowers · ui-ux-pro-max · stop-slop 적용 · 36시간 준수</div><div class="qa">이 페이지는 매 실행마다 자동 갱신됩니다.</div></div>
+</div>
+</body>
+</html>
