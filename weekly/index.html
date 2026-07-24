@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>FARMKO GLS 주간 시황 — 2026-W30</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#EEF2F6; --surface:#FFFFFF; --surface-2:#F0F5EC; --box:#EAF1F8;
+  --ink:#1A2733; --ink-soft:#51616F; --line:#DBE3EB;
+  --navy:#1F4E79; --navy-2:#2E74B5; --sage:#A9C58F; --sage-deep:#5E7A45;
+  --up:#1E7A34; --down:#C0392B; --attn:#B7791F;
+  --sans:"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR","Segoe UI",system-ui,-apple-system,sans-serif;
+  --maxw:920px; --r:12px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0D1520; --surface:#15212F; --surface-2:#18271F; --box:#16283C;
+  --ink:#E7EEF6; --ink-soft:#9FB2C4; --line:#27394D;
+  --navy:#5B9BD5; --navy-2:#7FB0E0; --sage:#8FB27A; --sage-deep:#B7D3A0;
+  --up:#4FB477; --down:#E5736A; --attn:#E0A94A;
+}}
+:root[data-theme="dark"]{
+  --bg:#0D1520; --surface:#15212F; --surface-2:#18271F; --box:#16283C;
+  --ink:#E7EEF6; --ink-soft:#9FB2C4; --line:#27394D;
+  --navy:#5B9BD5; --navy-2:#7FB0E0; --sage:#8FB27A; --sage-deep:#B7D3A0;
+  --up:#4FB477; --down:#E5736A; --attn:#E0A94A;
+}
+:root[data-theme="light"]{
+  --bg:#EEF2F6; --surface:#FFFFFF; --surface-2:#F0F5EC; --box:#EAF1F8;
+  --ink:#1A2733; --ink-soft:#51616F; --line:#DBE3EB;
+  --navy:#1F4E79; --navy-2:#2E74B5; --sage:#A9C58F; --sage-deep:#5E7A45;
+  --up:#1E7A34; --down:#C0392B; --attn:#B7791F;
+}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:24px 18px 64px}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* agent control card */
+.agent{background:linear-gradient(135deg,color-mix(in srgb,var(--navy) 14%,var(--surface)),var(--surface));
+  border:1px solid var(--line);border-left:5px solid var(--sage-deep);border-radius:var(--r);padding:20px 22px}
+.agent .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.agent .kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-deep);font-weight:700;width:100%}
+.agent h1{margin:0;font-size:23px;font-weight:800;color:var(--navy);letter-spacing:-.01em;text-wrap:balance}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;padding:3px 11px;border-radius:999px;
+  background:color-mix(in srgb,var(--up) 20%,transparent);color:var(--up);border:1px solid color-mix(in srgb,var(--up) 45%,transparent)}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--up);box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 25%,transparent)}
+.agent .desc{margin:10px 0 14px;color:var(--ink-soft);font-size:14px;max-width:66ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 13px}
+.fact .k{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--sage-deep);font-weight:700}
+.fact .v{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:3px;color:var(--ink)}
+
+/* section divider */
+.divider{display:flex;align-items:center;gap:12px;margin:30px 0 14px}
+.divider h2{margin:0;font-size:14px;font-weight:800;letter-spacing:.05em;color:var(--sage-deep);text-transform:uppercase;white-space:nowrap}
+.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* briefing masthead */
+.mast{padding:16px 22px;border-radius:var(--r);
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-bottom:3px solid var(--sage)}
+:root[data-theme="dark"] .mast,@media (prefers-color-scheme:dark){.mast{color:#0D1520}}
+.mast h3{margin:0;font-size:20px;font-weight:800;text-wrap:balance}
+.mast .meta{font-size:13px;opacity:.92;font-variant-numeric:tabular-nums;margin-top:2px}
+
+.key{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--navy);
+  border-radius:var(--r);padding:16px 20px;margin:14px 0 16px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-deep);font-weight:700;margin-bottom:8px}
+.key ol{margin:0;padding-left:1.1em}.key li{margin:4px 0;font-weight:600}
+.key li::marker{color:var(--navy-2);font-weight:800}
+.context{background:var(--box);border:1px solid color-mix(in srgb,var(--navy-2) 35%,transparent);
+  border-radius:var(--r);padding:12px 16px;margin:0 0 22px;font-size:14px}.context b{color:var(--navy)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:0 0 26px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.stat .lbl{font-size:12px;color:var(--ink-soft);margin-bottom:4px}
+.stat .val{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+.up{color:var(--up)}.down{color:var(--down)}.stat .note{font-size:11px;color:var(--ink-soft);margin-top:2px}
+.sec{margin:0 0 22px}
+.sec-h{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding:8px 14px;
+  background:color-mix(in srgb,var(--sage) 32%,var(--surface));border-radius:8px}
+.sec-h .roman{font-weight:800;color:var(--sage-deep);font-size:18px}
+.sec-h h2{margin:0;font-size:17px;font-weight:800;color:var(--navy)}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:0 0 10px}
+.item-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.item-head h4{margin:0;font-size:16px;font-weight:700;color:var(--ink);text-wrap:balance}
+.chip{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.chip.attn{background:color-mix(in srgb,var(--attn) 22%,transparent);color:var(--attn);border:1px solid color-mix(in srgb,var(--attn) 45%,transparent)}
+.item-meta{font-size:12.5px;color:var(--navy-2);margin:3px 0 8px;font-variant-numeric:tabular-nums}
+.bullets{margin:0 0 8px;padding-left:1.15em}.bullets li{margin:3px 0;color:var(--ink-soft)}
+.impl{font-size:14px;padding:8px 12px;background:var(--surface-2);border-radius:8px;margin:6px 0}.impl b{color:var(--navy)}
+.src{display:inline-block;margin-top:6px;font-size:12px;color:var(--navy-2);text-decoration:none;word-break:break-all}
+.src:hover,.src:focus-visible{text-decoration:underline}.brief{margin:2px 0;color:var(--ink-soft)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);margin:6px 0 14px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{background:var(--sage);color:var(--navy);font-weight:800;padding:8px 12px;text-align:left;white-space:nowrap}
+:root[data-theme="dark"] th,@media (prefers-color-scheme:dark){th{color:#0D1520}}
+td{padding:8px 12px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* pdf download button */
+.pdf-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:10px 18px;
+  background:var(--navy);color:#fff !important;border-radius:9px;text-decoration:none;font-weight:700;font-size:13.5px}
+:root[data-theme="dark"] .pdf-btn,@media (prefers-color-scheme:dark){.pdf-btn{color:#0D1520 !important}}
+.pdf-btn:hover,.pdf-btn:focus-visible{background:var(--navy-2)}
+
+/* run history (each row is a link to that day's PDF) */
+a.run{display:flex;gap:14px;padding:14px 12px;border-top:1px solid var(--line);
+  text-decoration:none;color:inherit;border-radius:8px;transition:background .12s}
+a.run:first-of-type{border-top:none}
+a.run:hover,a.run:focus-visible{background:var(--surface-2)}
+.run .date{min-width:104px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
+.run .rbody{flex:1;min-width:0}
+.run .sum{margin:0;color:var(--ink);font-size:14px;font-weight:600}
+.run .sub{margin:3px 0 0;color:var(--ink-soft);font-size:13px}
+.run .m{font-size:12px;color:var(--ink-soft);margin-top:5px;font-variant-numeric:tabular-nums}
+.run .open{align-self:center;margin-left:auto;color:var(--navy-2);font-weight:800;font-size:12.5px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){a.run{transition:none}}
+/* dedicated, scalable history panel */
+.count{font-size:12px;font-weight:800;color:var(--navy-2);white-space:nowrap;
+  background:color-mix(in srgb,var(--navy-2) 15%,transparent);padding:2px 10px;border-radius:999px}
+.history-scroll{max-height:540px;overflow-y:auto;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--surface);padding:0 14px}
+.month-h{position:sticky;top:0;background:var(--surface);padding:11px 0 7px;margin:0;z-index:1;
+  font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--sage-deep);
+  border-bottom:1px solid var(--line)}
+.month-group a.run:first-of-type{border-top:none}
+.month-group + .month-group{margin-top:2px}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;
+  background:color-mix(in srgb,var(--navy-2) 18%,transparent);color:var(--navy-2)}
+.empty{color:var(--ink-soft);font-size:14px;padding:14px 0;border-top:1px solid var(--line)}
+
+.foot{border-top:2px solid var(--sage);margin-top:30px;padding-top:14px;font-size:12.5px;color:var(--ink-soft);text-align:center}
+.foot .brand{font-weight:800;color:var(--navy)}
+.qa{margin-top:8px;font-size:11.5px;color:var(--ink-soft);text-align:center}
+a:focus-visible{outline:2px solid var(--navy-2);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+@media (max-width:560px){.agent h1{font-size:19px}.wrap{padding:16px 12px 48px}.run .date{min-width:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="agent"><div class="top"><div class="kicker">Weekly Agent · 주간 시황 에이전트</div><h1>Farmko 주간 해운·물류 시황 에이전트</h1><span class="pill"><span class="dot"></span>활성 (수동)</span></div><p class="desc">한 주간의 데일리 브리핑을 통합하고 PLISM 선복·마감을 조회한 뒤, 최근 7일 심층 리서치로 주간 시황 보고서·운임지수 수치표·BSA 운영전략 3종을 생성합니다. 이 공개 페이지에는 시황 뉴스(File 1)만 게시되며, 지수표·BSA 전략은 사내 전용입니다.</p><div class="facts"><div class="fact"><div class="k">주기</div><div class="v">매주 · 수동 실행 (/farmko-weekly-brief)</div></div><div class="fact"><div class="k">최근 주차</div><div class="v">2026-W30</div></div><div class="fact"><div class="k">기간</div><div class="v">2026-07-20 ~ 07-24</div></div><div class="fact"><div class="k">실행 방식</div><div class="v">수동: 데스크톱 앱에서 /farmko-weekly-brief · 모델 Sonnet</div></div></div></section>
+<div class="divider"><h2>최신 주간 시황 (File 1)</h2></div>
+<div class="mast"><h3>주간 해운·물류 시황 보고</h3><div class="meta">2026-W30 · 2026-07-20 ~ 07-24 · 기준 2026-07-24 17:00</div></div>
+<a class="pdf-btn" href="https://inu-sudo.github.io/farmko-brief-acafb34e/weekly/reports/Weekly%20Market%20News_30.pdf" target="_blank" rel="noopener">📄 주간 시황 보고서(File 1) PDF 다운로드</a>
+<section class="key"><div class="eyebrow">핵심 요약 (5)</div><ol><li>인도 서안 성수기 진입 — 스팟 3주 연속 상승, 8월 GRI 예고</li><li>호르무즈 리스크로 중동 전쟁위험할증 상방</li><li>포트클랑 환적 적체 완화 — T/S 리드타임 정상화</li><li>미국 대한 관세 발효로 수출 물류비 상방</li><li>홍해 재개 조짐 없음 — 서스펜드 유지</li></ol></section>
+<div class="context"><b>당사 계약 선사 주항로</b> — 부산→포트클랑(T/S)→인도→중동걸프 / 홍해 서스펜드 / 핵심=인도 항로</div>
+<section class="sec"><div class="sec-h"><span class="roman">1</span><h2>해운 · 운임지수</h2></div>
+<div class="tbl-wrap"><table><thead><tr><th>지수</th><th>금주</th><th>전주</th><th>증감률</th><th>발표기관</th></tr></thead><tbody><tr><td class="">SCFI 종합</td><td class="">1120</td><td class="">1085</td><td class="up">▲ +3.2%</td><td class="">SSE</td></tr><tr><td class="">Drewry WCI</td><td class="">2340</td><td class="">2280</td><td class="up">▲ +2.6%</td><td class="">Drewry</td></tr><tr><td class="">BDI</td><td class="">1450</td><td class="">1490</td><td class="down">▼ -2.7%</td><td class="">Baltic</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table><thead><tr><th>지표</th><th>금주</th><th>전주</th><th>증감률</th><th>비고</th></tr></thead><tbody><tr><td class="">NCFI 인도·파키스탄</td><td class="">980</td><td class="">935</td><td class="up">▲ +4.8%</td><td class="">닝보</td></tr><tr><td class="">SCFI 중동</td><td class="">1450</td><td class="">1400</td><td class="up">▲ +3.6%</td><td class="">상하이</td></tr></tbody></table></div>
+<article class="item"><div class="item-head"><h4>인도 (핵심)</h4></div><p class="brief">문드라·나바셰바 향 스팟 3주 연속 상승, 성수기 진입으로 8월 GRI 예고됨.</p></article>
+<article class="item"><div class="item-head"><h4>중동 걸프</h4></div><p class="brief">호르무즈 긴장으로 전쟁위험할증 상방 압력 지속됨.</p></article>
+</section>
+<section class="sec"><div class="sec-h"><span class="roman">2</span><h2>물류</h2></div><article class="item"><div class="item-head"><h4>나바셰바 체선 심화</h4></div><ul class="bullets"><li>몬순 영향 야드 점유율 상승</li><li>대기 평균 2일</li></ul><div class="impl"><b>→ 시사점</b> 인도서안 리드타임 여유 필요함</div><a class="src" href="https://example.com/l1" target="_blank" rel="noopener">출처: https://example.com/l1</a></article></section>
+<section class="sec"><div class="sec-h"><span class="roman">3</span><h2>선사동향</h2></div><article class="item"><div class="item-head"><h4>CMA CGM 중동 PSS 도입</h4></div><ul class="bullets"><li>8월 1일부 TEU당 300불</li></ul><div class="impl"><b>→ 시사점</b> 걸프 화물 견적 반영 필요함</div><a class="src" href="https://example.com/c1" target="_blank" rel="noopener">출처: https://example.com/c1</a></article></section>
+<section class="sec"><div class="sec-h"><span class="roman">4</span><h2>경제·사회</h2></div><article class="item"><div class="item-head"><h4>미국 대한 관세 발효</h4></div><ul class="bullets"><li>강제노동 관세 12.5%</li></ul><div class="impl"><b>→ 시사점</b> 수출 물류비 상방</div><a class="src" href="https://example.com/e1" target="_blank" rel="noopener">출처: https://example.com/e1</a></article></section>
+<section class="sec"><div class="sec-h"><span class="roman">5</span><h2>종합 전망 및 시사점</h2></div>
+<div class="context">인도 성수기와 중동 리스크가 동시 작용하며 운임 상방 우세함.</div>
+<div class="eyebrow" style="margin:6px 0 4px">FARMKO GLS 시사점</div><ul class="bullets"><li>인도서안 조기 부킹 유도</li><li>걸프 프리미엄 판매</li></ul>
+<div class="tbl-wrap"><table><thead><tr><th>항목</th><th>일정/트리거</th><th>주시 이유</th></tr></thead><tbody><tr><td class="">호르무즈</td><td class="">상시</td><td class="">기항 비용</td></tr><tr><td class="">8월 GRI</td><td class="">8/1</td><td class="">운임 인상</td></tr></tbody></table></div>
+</section>
+<div class="divider"><h2>주간 실행 기록 · Weekly history</h2><span class="count">1건</span></div>
+<div class="history-scroll"><div class="month-group"><div class="month-h">2026년 7월</div><a class="run" href="https://inu-sudo.github.io/farmko-brief-acafb34e/weekly/reports/Weekly%20Market%20News_30.pdf" target="_blank" rel="noopener"><div class="date">2026-W30<span class="tag">샘플</span></div><div class="rbody"><p class="sum">인도 서안(문드라·나바셰바) 성수기 진입 — 스팟 3주 연속 상승, 8월 GRI 예고</p><div class="m">2026-07-20 ~ 07-24 · 데일리 5건 반영 · 스윕 62</div></div><span class="open">News PDF ↗</span></a></div></div>
+<div class="foot"><span class="brand">㈜팜코지엘에스 · FARMKO GLS</span><div class="tnum" style="margin-top:4px">데일리 5건 반영 · 스윕 62개 · 최근 7일 기준</div><div class="qa">지수표(File 2)·BSA 전략(File 3)은 사내 전용 — 이 페이지에 게시되지 않습니다.</div><div class="qa">품질 점검: superpowers · ui-ux-pro-max · stop-slop 적용</div></div>
+</div>
+</body>
+</html>
