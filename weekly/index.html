@@ -147,6 +147,25 @@ a.run:hover,a.run:focus-visible{background:var(--surface-2)}
 .chart .c-axis{fill:var(--ink-soft);font-size:10.5px}
 .chart-legend{display:flex;gap:16px;margin-top:8px;font-size:11.5px;color:var(--ink-soft)}
 .chart-legend b{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
+.chart .c-bar{transition:opacity .12s}
+/* interactive layer (inline JS) */
+.fk-theme{position:fixed;right:16px;bottom:16px;z-index:50;width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);cursor:pointer;font-size:18px;line-height:1}
+.fk-nav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;margin:0 0 6px;background:var(--bg)}
+.fk-nav a{font-size:12px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:5px 11px;
+  border:1px solid var(--line);border-radius:999px;background:var(--surface);white-space:nowrap}
+.fk-nav a.on,.fk-nav a:hover,.fk-nav a:focus-visible{color:#fff;background:var(--navy);border-color:var(--navy)}
+:root[data-theme="dark"] .fk-nav a.on,@media (prefers-color-scheme:dark){.fk-nav a.on{color:var(--navy-deep)}}
+.fk-search{width:100%;padding:9px 12px;margin:0 0 10px;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface);color:var(--ink);font-family:var(--sans);font-size:13px}
+.fk-search:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 18%,transparent)}
+.fk-caret{color:var(--ink-mute);font-size:10px;margin-left:4px}
+.fk-tip{position:fixed;z-index:60;pointer-events:none;background:var(--navy-deep);color:#fff;font-size:12px;
+  padding:5px 9px;border-radius:6px;box-shadow:var(--shadow);font-family:var(--mono);white-space:nowrap}
+th{cursor:pointer;user-select:none}
+th[data-sort]::after{content:" ↕";opacity:.75}
+th[data-sort="asc"]::after{content:" ↑"}
+th[data-sort="desc"]::after{content:" ↓"}
 .tag{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;
   background:color-mix(in srgb,var(--navy-2) 18%,transparent);color:var(--navy-2)}
 .empty{color:var(--ink-soft);font-size:14px;padding:14px 0;border-top:1px solid var(--line)}
@@ -168,10 +187,10 @@ a:focus-visible{outline:2px solid var(--navy-2);outline-offset:2px}
 <section class="key"><div class="eyebrow">핵심 요약 (5)</div><ol><li>홍해 남단이 사실상 봉쇄됨 — 후티가 7/20 사우디 해상봉쇄를 선언하고 7/22 유조선 2척(Encelia·Layla)을 피격함. 7/21 바브엘만데브 통항 -34%(29척)·호르무즈 -31%(9척)로 급감함. 당사 계약 홍해 leg 운항 중단은 유지되며, 걸프(소하르·코르파칸) 기항 원가·보험료 상방이 확대됨.</li><li>운임지수는 전 지수 동반 하락함 — SCFI 3,080.31p(▼-3.28%, 11주 만에 하락)·KCCI 4,204p(▼-2.64%, 2주 연속)·Drewry WCI 4,374$/FEU(▼-4.0%)로 성수기 모멘텀이 둔화됨. 다만 중동 항로(KCCI KMEI 7,266$)는 전쟁위험으로 강세를 유지함 → 걸프는 프리미엄, 여타는 소진 우선 구도가 성립함.</li><li>서인도(문드라·나바셰바=핵심 매출)는 FAGL 차기 선적이 08/07 ZHONG GU HANG ZHOU 단일 항차뿐임 — 금주 슬롯 공백. 인도 PSS(한국발 US$300/TEU, 8/3)·MSC 혼잡할증($500/box)이 겹쳐 견적 상방이 확보됨 → 조기 확정·프리미엄 유지가 유리함.</li><li>걸프 항차 GFS GALAXY(7/26)·ONE MAESTRO(7/28)는 이미 부킹 마감됨. 차기 HERTA(8/3, 코르파칸·소하르)는 07/29 부킹 마감으로 임박함 → 유가($100 돌파)·전쟁위험할증을 반영한 프리미엄 견적과 조기 마감 관리가 필요함.</li><li>동인도·동남아(콜카타·첸나이·포트클랑)는 WAN HAI 521(7/29)·TIGER CHENNAI(7/30) 다항차로 부킹이 열려 있으나 마감이 임박함. 첸나이 T/S 일부 구간 부킹중단·일부 BLANK SAILING이 표기됨 → Dead Freight 방지를 위해 소진을 우선하되 대체 항차를 사전 점검함.</li></ol></section>
 <div class="context"><b>당사 계약 선사 주항로</b> — 부산(KRPUS)發 인도 서안(문드라·나바셰바·피파바브)·동안(콜카타·첸나이·카투팔리)·카라치, 중동 걸프(소하르·코르파칸)·T/S 포트클랑(+9일)임. 자체 FES(FAGL) 및 부킹 파트너(우성마리타임·벤라인·늘푸른해운항공 등) 운영함. 금주~차주 FAGL 항차: WAN HAI 521 W042(7/29 콜카타·PKG)·TIGER CHENNAI 2605W(7/30 첸나이·카투팔리·콜카타·PKG)·HERTA 026D4W(8/3 코르파칸·소하르)·ZHONG GU HANG ZHOU 2604W(8/7 나바셰바·문드라·콜카타·카라치·PKG)임. 홍해 leg 운항 중단은 지속되며, PLISM상 첸나이 T/S 일부 구간 부킹중단·일부 BLANK SAILING이 표기됨.</div>
 <section class="sec"><div class="sec-h"><span class="roman">1</span><h2>해운 · 운임지수</h2></div>
-<div class="chart"><div class="chart-title">글로벌 운임지수 증감률 (전주 대비, %)</div><svg viewBox="0 0 600 226" role="img" aria-label="글로벌 운임지수 증감률 (전주 대비, %)"><line x1="350.0" y1="8" x2="350.0" y2="218" stroke="var(--line)" stroke-width="1"/><text class="c-lbl" x="150" y="27.0" text-anchor="end">SCFI(종합)</text><rect x="350.0" y="14.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="27.0" text-anchor="start">+11.00%</text><text class="c-lbl" x="150" y="57.0" text-anchor="end">NCFI(종합)</text><rect x="350.0" y="44.0" width="50.2" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="406.2" y="57.0" text-anchor="start">+3.00%</text><text class="c-lbl" x="150" y="87.0" text-anchor="end">KCCI(종합)</text><rect x="350.0" y="74.0" width="33.5" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="389.5" y="87.0" text-anchor="start">+2.00%</text><text class="c-lbl" x="150" y="117.0" text-anchor="end">Drewry WCI(종합)</text><rect x="350.0" y="104.0" width="33.5" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="389.5" y="117.0" text-anchor="start">+2.00%</text><text class="c-lbl" x="150" y="147.0" text-anchor="end">BDI(건화물)</text><rect x="350.0" y="134.0" width="117.1" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="473.1" y="147.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="177.0" text-anchor="end">브렌트유(9월물)</text><rect x="350.0" y="164.0" width="83.6" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="439.6" y="177.0" text-anchor="start">+5.00%</text><text class="c-lbl" x="150" y="207.0" text-anchor="end">WTI(9월물)</text><rect x="350.0" y="194.0" width="100.4" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="456.4" y="207.0" text-anchor="start">+6.00%</text></svg><div class="chart-legend"><span><b style="background:var(--up)"></b>상승</span><span><b style="background:var(--down)"></b>하락</span></div></div>
-<div class="chart"><div class="chart-title">글로벌 운임지수 절대수준 (금주)</div><svg viewBox="0 0 600 240" role="img" aria-label="글로벌 운임지수 절대수준 (금주)"><text class="c-lbl" x="150" y="26.0" text-anchor="end">SCFI(종합)</text><rect x="162" y="13.0" width="262.0" height="18" rx="3" fill="var(--navy-2)"/><text class="c-val" x="430.0" y="26.0" text-anchor="start" fill="var(--ink)">3,080</text><text class="c-lbl" x="150" y="54.0" text-anchor="end">CCFI(종합)</text><rect x="162" y="41.0" width="159.3" height="18" rx="3" fill="var(--navy-2)"/><text class="c-val" x="327.3" y="54.0" text-anchor="start" fill="var(--ink)">1,873</text><text class="c-lbl" x="150" y="82.0" text-anchor="end">NCFI(종합)</text><rect x="162" y="69.0" width="204.3" height="18" rx="3" fill="var(--navy-2)"/><text class="c-val" x="372.3" y="82.0" text-anchor="start" fill="var(--ink)">2,402</text><text class="c-lbl" x="150" y="110.0" text-anchor="end">KCCI(종합)</text><rect x="162" y="97.0" width="357.5" height="18" rx="3" fill="var(--navy-2)"/><text class="c-val" x="525.5" y="110.0" text-anchor="start" fill="var(--ink)">4,204</text><text class="c-lbl" x="150" y="138.0" text-anchor="end">Drewry WCI(종합)</text><rect x="162" y="125.0" width="372.0" height="18" rx="3" fill="var(--navy-2)"/><text class="c-val" x="540.0" y="138.0" text-anchor="start" fill="var(--ink)">4,374</text><text class="c-lbl" x="150" y="166.0" text-anchor="end">BDI(건화물)</text><rect x="162" y="153.0" width="241.5" height="18" rx="3" fill="var(--navy-2)"/><text class="c-val" x="409.5" y="166.0" text-anchor="start" fill="var(--ink)">2,840</text><text class="c-lbl" x="150" y="194.0" text-anchor="end">브렌트유(9월물)</text><rect x="162" y="181.0" width="8.6" height="18" rx="3" fill="var(--navy-2)"/><text class="c-val" x="176.6" y="194.0" text-anchor="start" fill="var(--ink)">101</text><text class="c-lbl" x="150" y="222.0" text-anchor="end">WTI(9월물)</text><rect x="162" y="209.0" width="7.8" height="18" rx="3" fill="var(--navy-2)"/><text class="c-val" x="175.8" y="222.0" text-anchor="start" fill="var(--ink)">92</text></svg></div>
+<div class="chart"><div class="chart-title">글로벌 운임지수 증감률 (전주 대비, %)</div><svg viewBox="0 0 600 226" role="img" aria-label="글로벌 운임지수 증감률 (전주 대비, %)"><line x1="350.0" y1="8" x2="350.0" y2="218" stroke="var(--line)" stroke-width="1"/><text class="c-lbl" x="150" y="27.0" text-anchor="end">SCFI(종합)</text><rect class="c-bar" x="350.0" y="14.0" width="184.0" height="18" rx="3" fill="var(--up)" data-label="SCFI(종합)" data-value="+11.00%"/><text class="c-val up" x="540.0" y="27.0" text-anchor="start">+11.00%</text><text class="c-lbl" x="150" y="57.0" text-anchor="end">NCFI(종합)</text><rect class="c-bar" x="350.0" y="44.0" width="50.2" height="18" rx="3" fill="var(--up)" data-label="NCFI(종합)" data-value="+3.00%"/><text class="c-val up" x="406.2" y="57.0" text-anchor="start">+3.00%</text><text class="c-lbl" x="150" y="87.0" text-anchor="end">KCCI(종합)</text><rect class="c-bar" x="350.0" y="74.0" width="33.5" height="18" rx="3" fill="var(--up)" data-label="KCCI(종합)" data-value="+2.00%"/><text class="c-val up" x="389.5" y="87.0" text-anchor="start">+2.00%</text><text class="c-lbl" x="150" y="117.0" text-anchor="end">Drewry WCI(종합)</text><rect class="c-bar" x="350.0" y="104.0" width="33.5" height="18" rx="3" fill="var(--up)" data-label="Drewry WCI(종합)" data-value="+2.00%"/><text class="c-val up" x="389.5" y="117.0" text-anchor="start">+2.00%</text><text class="c-lbl" x="150" y="147.0" text-anchor="end">BDI(건화물)</text><rect class="c-bar" x="350.0" y="134.0" width="117.1" height="18" rx="3" fill="var(--up)" data-label="BDI(건화물)" data-value="+7.00%"/><text class="c-val up" x="473.1" y="147.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="177.0" text-anchor="end">브렌트유(9월물)</text><rect class="c-bar" x="350.0" y="164.0" width="83.6" height="18" rx="3" fill="var(--up)" data-label="브렌트유(9월물)" data-value="+5.00%"/><text class="c-val up" x="439.6" y="177.0" text-anchor="start">+5.00%</text><text class="c-lbl" x="150" y="207.0" text-anchor="end">WTI(9월물)</text><rect class="c-bar" x="350.0" y="194.0" width="100.4" height="18" rx="3" fill="var(--up)" data-label="WTI(9월물)" data-value="+6.00%"/><text class="c-val up" x="456.4" y="207.0" text-anchor="start">+6.00%</text></svg><div class="chart-legend"><span><b style="background:var(--up)"></b>상승</span><span><b style="background:var(--down)"></b>하락</span></div></div>
+<div class="chart"><div class="chart-title">글로벌 운임지수 절대수준 (금주)</div><svg viewBox="0 0 600 240" role="img" aria-label="글로벌 운임지수 절대수준 (금주)"><text class="c-lbl" x="150" y="26.0" text-anchor="end">SCFI(종합)</text><rect class="c-bar" x="162" y="13.0" width="262.0" height="18" rx="3" fill="var(--navy-2)" data-label="SCFI(종합)" data-value="3,080"/><text class="c-val" x="430.0" y="26.0" text-anchor="start" fill="var(--ink)">3,080</text><text class="c-lbl" x="150" y="54.0" text-anchor="end">CCFI(종합)</text><rect class="c-bar" x="162" y="41.0" width="159.3" height="18" rx="3" fill="var(--navy-2)" data-label="CCFI(종합)" data-value="1,873"/><text class="c-val" x="327.3" y="54.0" text-anchor="start" fill="var(--ink)">1,873</text><text class="c-lbl" x="150" y="82.0" text-anchor="end">NCFI(종합)</text><rect class="c-bar" x="162" y="69.0" width="204.3" height="18" rx="3" fill="var(--navy-2)" data-label="NCFI(종합)" data-value="2,402"/><text class="c-val" x="372.3" y="82.0" text-anchor="start" fill="var(--ink)">2,402</text><text class="c-lbl" x="150" y="110.0" text-anchor="end">KCCI(종합)</text><rect class="c-bar" x="162" y="97.0" width="357.5" height="18" rx="3" fill="var(--navy-2)" data-label="KCCI(종합)" data-value="4,204"/><text class="c-val" x="525.5" y="110.0" text-anchor="start" fill="var(--ink)">4,204</text><text class="c-lbl" x="150" y="138.0" text-anchor="end">Drewry WCI(종합)</text><rect class="c-bar" x="162" y="125.0" width="372.0" height="18" rx="3" fill="var(--navy-2)" data-label="Drewry WCI(종합)" data-value="4,374"/><text class="c-val" x="540.0" y="138.0" text-anchor="start" fill="var(--ink)">4,374</text><text class="c-lbl" x="150" y="166.0" text-anchor="end">BDI(건화물)</text><rect class="c-bar" x="162" y="153.0" width="241.5" height="18" rx="3" fill="var(--navy-2)" data-label="BDI(건화물)" data-value="2,840"/><text class="c-val" x="409.5" y="166.0" text-anchor="start" fill="var(--ink)">2,840</text><text class="c-lbl" x="150" y="194.0" text-anchor="end">브렌트유(9월물)</text><rect class="c-bar" x="162" y="181.0" width="8.6" height="18" rx="3" fill="var(--navy-2)" data-label="브렌트유(9월물)" data-value="101"/><text class="c-val" x="176.6" y="194.0" text-anchor="start" fill="var(--ink)">101</text><text class="c-lbl" x="150" y="222.0" text-anchor="end">WTI(9월물)</text><rect class="c-bar" x="162" y="209.0" width="7.8" height="18" rx="3" fill="var(--navy-2)" data-label="WTI(9월물)" data-value="92"/><text class="c-val" x="175.8" y="222.0" text-anchor="start" fill="var(--ink)">92</text></svg></div>
 <div class="tbl-wrap"><table><thead><tr><th>지수</th><th>최신값</th><th>전주 대비</th><th>기준일</th><th>비고</th></tr></thead><tbody><tr><td class="">SCFI(종합)</td><td class="">3,080.31 p</td><td class="down">▼ -104.51 (-3.28%)</td><td class="">07-17</td><td class="">11주 만에 하락 전환 · 07/24 신규분 하락 지속 전망</td></tr><tr><td class="">CCFI(종합)</td><td class="">1,873.15 p</td><td class="down">▼ 하락세</td><td class="">07월 중순</td><td class="">최근 확인 공표치 · SCFI 동반 조정 · 최신 주간치 재확인 필요</td></tr><tr><td class="">NCFI(종합)</td><td class="">2,401.9 p</td><td class="down">▼ -88.7 (-3.6%)</td><td class="">07-10</td><td class="">3주 연속 하락(07/03 2,490.6) · 07/17분 미확인</td></tr><tr><td class="">KCCI(종합)</td><td class="">4,204 p</td><td class="down">▼ -114 (-2.64%)</td><td class="">07-20</td><td class="">2주 연속 하락(07/13 4,318) · 미주 조정 주도</td></tr><tr><td class="">Drewry WCI(종합)</td><td class="">4,374 $/FEU</td><td class="down">▼ -4.0%</td><td class="">07-23</td><td class="">2주 연속 하락 · 차주 추가 하락 전망</td></tr><tr><td class="">BDI(건화물)</td><td class="">2,840 p</td><td class="down">▼ -3.0%</td><td class="">07-16</td><td class="">7/6 이후 최저 → 저점 후 반등 모색 · 케이프 변동 확대</td></tr><tr><td class="">브렌트유(9월물)</td><td class="">100.65 $/bbl</td><td class="up">▲ +7.0%</td><td class="">07-23</td><td class="">5월 말 이후 첫 100달러 돌파</td></tr><tr><td class="">WTI(9월물)</td><td class="">92.19 $/bbl</td><td class="up">▲ +6.17%</td><td class="">07-23</td><td class="">6월 초 이후 최고</td></tr></tbody></table></div>
-<div class="chart"><div class="chart-title">핵심 항로 지수 증감률 (%)</div><svg viewBox="0 0 600 106" role="img" aria-label="핵심 항로 지수 증감률 (%)"><line x1="350.0" y1="8" x2="350.0" y2="98" stroke="var(--line)" stroke-width="1"/><text class="c-lbl" x="150" y="27.0" text-anchor="end">중동 걸프(Dubai)</text><rect x="350.0" y="14.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="27.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="57.0" text-anchor="end">중동 걸프</text><rect x="350.0" y="44.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="57.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="87.0" text-anchor="end">동남아 T/S(포트클랑)</text><rect x="350.0" y="74.0" width="184.0" height="18" rx="3" fill="var(--up)"/><text class="c-val up" x="540.0" y="87.0" text-anchor="start">+7.00%</text></svg><div class="chart-legend"><span><b style="background:var(--up)"></b>상승</span><span><b style="background:var(--down)"></b>하락</span></div></div>
+<div class="chart"><div class="chart-title">핵심 항로 지수 증감률 (%)</div><svg viewBox="0 0 600 106" role="img" aria-label="핵심 항로 지수 증감률 (%)"><line x1="350.0" y1="8" x2="350.0" y2="98" stroke="var(--line)" stroke-width="1"/><text class="c-lbl" x="150" y="27.0" text-anchor="end">중동 걸프(Dubai)</text><rect class="c-bar" x="350.0" y="14.0" width="184.0" height="18" rx="3" fill="var(--up)" data-label="중동 걸프(Dubai)" data-value="+7.00%"/><text class="c-val up" x="540.0" y="27.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="57.0" text-anchor="end">중동 걸프</text><rect class="c-bar" x="350.0" y="44.0" width="184.0" height="18" rx="3" fill="var(--up)" data-label="중동 걸프" data-value="+7.00%"/><text class="c-val up" x="540.0" y="57.0" text-anchor="start">+7.00%</text><text class="c-lbl" x="150" y="87.0" text-anchor="end">동남아 T/S(포트클랑)</text><rect class="c-bar" x="350.0" y="74.0" width="184.0" height="18" rx="3" fill="var(--up)" data-label="동남아 T/S(포트클랑)" data-value="+7.00%"/><text class="c-val up" x="540.0" y="87.0" text-anchor="start">+7.00%</text></svg><div class="chart-legend"><span><b style="background:var(--up)"></b>상승</span><span><b style="background:var(--down)"></b>하락</span></div></div>
 <div class="tbl-wrap"><table><thead><tr><th>핵심 항로</th><th>지표/운임</th><th>최신값</th><th>전주 대비</th><th>기준·출처</th></tr></thead><tbody><tr><td class="">중동 걸프(Dubai)</td><td class="">KCCI 중동(KMEI)</td><td class="">7,266 $/FEU</td><td class="up">▲ +102</td><td class="">07-13 · KOBC</td></tr><tr><td class="">중동 걸프</td><td class="">전쟁위험보험료</td><td class="">선가 3~5%</td><td class="up">▲ 0.2~0.5%→3~5%</td><td class="">07-23 · Business Standard</td></tr><tr><td class="">인도 서안(NSA)</td><td class="">한국발 PSS</td><td class="">US$300 /TEU</td><td class="up">▲ 신규(8/3 발효)</td><td class="">Maersk 공지</td></tr><tr><td class="">인도 서안(JNPA·Mundra)</td><td class="">혼잡할증(수입)</td><td class="">US$500 /box</td><td class="up">▲ 신규</td><td class="">MSC(북유럽발) · K+N</td></tr><tr><td class="">홍해·바브엘만데브</td><td class="">통항량(7/21)</td><td class="">29척</td><td class="down">▼ -34% d/d</td><td class="">ISW · CNBC</td></tr><tr><td class="">호르무즈</td><td class="">통항량(7/21)</td><td class="">9척</td><td class="down">▼ -31% d/d</td><td class="">CNBC</td></tr><tr><td class="">동남아 T/S(포트클랑)</td><td class="">대기·야드</td><td class="">1.63일 · 90~95%</td><td class="up">▲ 적체</td><td class="">K+N 7/21주</td></tr></tbody></table></div>
 <article class="item"><div class="item-head"><h4>인도 (핵심 매출 항로)</h4></div><p class="brief">주 초 K+N 7/21 리포트는 문드라 평균 대기 1.77일·첸나이 1일로 6월 정점(8~10일) 대비 버딩 지연이 완화됐다고 진단함. 그러나 주 후반으로 갈수록 중동發 전배 T/S 물량과 선박 집중(vessel bunching)이 나바셰바·문드라 재적체 요인으로 부상함. 세계 항만 적체는 4년 최악(선대 약 11% 대기 중)이며 나바셰바가 최악 항만군에 포함됨. 운임 측면에서 한국발 극동–인도/파키스탄 PSS(US$300/TEU)가 8/3 발효되고 MSC 혼잡할증($500/box, 북유럽 수입)·머스크 과중량 페널티가 겹쳐 견적 상방이 확보됨. FAGL 서인도 차기 선적은 08/07 ZHONG GU HANG ZHOU 단일 항차로 금주 슬롯이 비어 프리미엄·조기 확정이 유리함.</p></article>
 <article class="item"><div class="item-head"><h4>중동 걸프 (소하르·코르파칸)</h4></div><p class="brief">후티의 사우디 해상봉쇄(7/20)와 유조선 2척 피격(7/22), 미국의 이란 항만 해상봉쇄 재개(7/14)로 걸프 안보가 급격히 악화됨. 걸프·홍해 전쟁위험보험료가 선가의 0.2~0.5%에서 3~5%로 뛰며 항차당 수십만 달러의 추가 원가가 발생함. KCCI 중동(KMEI)은 7,266$로 강세를 유지함. FAGL 걸프 항차 GFS GALAXY(7/26)·ONE MAESTRO(7/28)는 부킹이 마감됐고 차기 HERTA(8/3)는 07/29 마감으로 임박함 → 전쟁위험할증·유가 상승분을 반영한 프리미엄 견적이 정당화됨.</p></article>
@@ -191,5 +210,100 @@ a:focus-visible{outline:2px solid var(--navy-2);outline-offset:2px}
 <div class="history-scroll"><div class="month-group"><div class="month-h">2026년 7월</div><a class="run" href="https://inu-sudo.github.io/farmko-brief-acafb34e/weekly/reports/Weekly%20Market%20News_30.pdf" target="_blank" rel="noopener"><div class="date">2026-W30<span class="tag">정식</span></div><div class="rbody"><p class="sum">홍해 남단 사실상 봉쇄 — 후티 7/20 사우디 해상봉쇄 선언·7/22 유조선 2척 피격, 7/21 바브엘만데브 통항 -34%·호르무즈 -31%. 당사 홍해 leg 중단 유지, 걸프(소하르·코르파칸) 원가·보험료 상방 확대.</p><div class="m">2026-07-20 ~ 07-24 · 데일리 1건 반영 · 스윕 55</div></div><span class="open">News PDF ↗</span></a></div></div>
 <div class="foot"><span class="brand">㈜팜코지엘에스 · FARMKO GLS</span><div class="tnum" style="margin-top:4px">데일리 1건 반영 · 스윕 55개 · 최근 7일 기준</div><div class="qa">지수표(File 2)·BSA 전략(File 3)은 사내 전용 — 이 페이지에 게시되지 않습니다.</div><div class="qa">품질 점검: superpowers · ui-ux-pro-max · stop-slop 적용</div></div>
 </div>
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s);};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+  var root=document.documentElement;
+
+  // theme toggle (persisted)
+  try{var sv=localStorage.getItem('farmko-theme'); if(sv) root.setAttribute('data-theme',sv);}catch(e){}
+  var isDark=function(){var t=root.getAttribute('data-theme'); if(t) return t==='dark';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;};
+  var tb=document.createElement('button'); tb.className='fk-theme'; tb.type='button'; tb.setAttribute('aria-label','테마 전환');
+  var paint=function(){tb.textContent=isDark()?'☀':'🌙';};
+  tb.onclick=function(){var d=isDark()?'light':'dark'; root.setAttribute('data-theme',d);
+    try{localStorage.setItem('farmko-theme',d);}catch(e){} paint();};
+  paint(); document.body.appendChild(tb);
+
+  // section jump-nav (sticky, active on scroll)
+  var secs=$$('.sec').filter(function(s){return $('.sec-h h2',s);});
+  if(secs.length>1){
+    var nav=document.createElement('nav'); nav.className='fk-nav';
+    secs.forEach(function(s,i){ if(!s.id) s.id='fksec'+i;
+      var h=$('.sec-h h2',s), rm=$('.sec-h .roman',s);
+      var a=document.createElement('a'); a.href='#'+s.id;
+      a.textContent=(rm?rm.textContent.trim()+' ':'')+h.textContent.trim();
+      a.onclick=function(e){e.preventDefault(); s.scrollIntoView({behavior:'smooth',block:'start'});};
+      nav.appendChild(a);
+    });
+    var anch=$('.mast')||$('.agent'); if(anch&&anch.parentNode) anch.parentNode.insertBefore(nav,anch);
+    if(window.IntersectionObserver){
+      var io=new IntersectionObserver(function(es){es.forEach(function(en){ if(en.isIntersecting){
+        $$('.fk-nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id);});
+      }});},{rootMargin:'-35% 0px -55% 0px'});
+      secs.forEach(function(s){io.observe(s);});
+    }
+  }
+
+  // sortable tables (numeric-aware)
+  $$('table').forEach(function(tbl){
+    var tbody=tbl.tBodies[0]; if(!tbody) return;
+    $$('th',tbl).forEach(function(th,ci){
+      var dir=0;
+      th.onclick=function(){
+        dir=dir===1?-1:1;
+        $$('th',tbl).forEach(function(x){x.removeAttribute('data-sort');});
+        th.setAttribute('data-sort',dir===1?'asc':'desc');
+        var rows=Array.prototype.slice.call(tbody.rows);
+        var num=function(v){var m=v.replace(/,/g,'').match(/-?\d+(\.\d+)?/); return m?parseFloat(m[0]):null;};
+        rows.sort(function(a,b){
+          var x=(a.cells[ci]?a.cells[ci].innerText:'').trim(), y=(b.cells[ci]?b.cells[ci].innerText:'').trim();
+          var nx=num(x), ny=num(y);
+          if(nx!==null&&ny!==null) return (nx-ny)*dir;
+          return x.localeCompare(y,'ko')*dir;
+        });
+        rows.forEach(function(r){tbody.appendChild(r);});
+      };
+    });
+  });
+
+  // history: search + collapsible months
+  var hs=$('.history-scroll');
+  if(hs){
+    var box=document.createElement('input'); box.className='fk-search'; box.type='search';
+    box.placeholder='실행 기록 검색…'; box.setAttribute('aria-label','실행 기록 검색');
+    hs.parentNode.insertBefore(box,hs);
+    box.oninput=function(){
+      var q=box.value.trim().toLowerCase();
+      $$('.month-group',hs).forEach(function(g){
+        var any=false;
+        $$('a.run',g).forEach(function(r){var hit=r.innerText.toLowerCase().indexOf(q)>=0; r.style.display=hit?'':'none'; if(hit)any=true;});
+        var mh=$('.month-h',g); if(mh) mh.style.display=any?'':'none'; g.style.display=any?'':'none';
+      });
+    };
+    $$('.month-h',hs).forEach(function(mh){
+      var c=document.createElement('span'); c.className='fk-caret'; c.textContent='▾'; mh.appendChild(c);
+      mh.onclick=function(){
+        var g=mh.parentNode; var col=g.classList.toggle('fk-collapsed');
+        $$('a.run',g).forEach(function(r){r.style.display=col?'none':'';});
+        c.textContent=col?'▸':'▾';
+      };
+    });
+  }
+
+  // chart tooltips
+  var tip=document.createElement('div'); tip.className='fk-tip'; tip.style.display='none'; document.body.appendChild(tip);
+  $$('.chart svg rect.c-bar').forEach(function(r){
+    r.addEventListener('mouseenter',function(){r.style.opacity='.75';});
+    r.addEventListener('mousemove',function(e){
+      var lab=r.getAttribute('data-label')||'', val=r.getAttribute('data-value')||'';
+      tip.innerHTML='<b>'+lab+'</b>&nbsp;&nbsp;'+val; tip.style.display='block';
+      tip.style.left=(e.clientX+12)+'px'; tip.style.top=(e.clientY+12)+'px';
+    });
+    r.addEventListener('mouseleave',function(){r.style.opacity=''; tip.style.display='none';});
+  });
+})();
+</script>
 </body>
 </html>
