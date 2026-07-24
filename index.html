@@ -100,14 +100,24 @@ th{background:var(--sage);color:var(--navy);font-weight:800;padding:8px 12px;tex
 td{padding:8px 12px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
 tbody tr:nth-child(even){background:var(--surface-2)}
 
-/* run history */
-.run{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
-.run:first-of-type{border-top:none}
+/* pdf download button */
+.pdf-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:10px 18px;
+  background:var(--navy);color:#fff !important;border-radius:9px;text-decoration:none;font-weight:700;font-size:13.5px}
+:root[data-theme="dark"] .pdf-btn,@media (prefers-color-scheme:dark){.pdf-btn{color:#0D1520 !important}}
+.pdf-btn:hover,.pdf-btn:focus-visible{background:var(--navy-2)}
+
+/* run history (each row is a link to that day's PDF) */
+a.run{display:flex;gap:14px;padding:14px 12px;border-top:1px solid var(--line);
+  text-decoration:none;color:inherit;border-radius:8px;transition:background .12s}
+a.run:first-of-type{border-top:none}
+a.run:hover,a.run:focus-visible{background:var(--surface-2)}
 .run .date{min-width:104px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
 .run .rbody{flex:1;min-width:0}
 .run .sum{margin:0;color:var(--ink);font-size:14px;font-weight:600}
 .run .sub{margin:3px 0 0;color:var(--ink-soft);font-size:13px}
 .run .m{font-size:12px;color:var(--ink-soft);margin-top:5px;font-variant-numeric:tabular-nums}
+.run .open{align-self:center;margin-left:auto;color:var(--navy-2);font-weight:800;font-size:12.5px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){a.run{transition:none}}
 .tag{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;
   background:color-mix(in srgb,var(--navy-2) 18%,transparent);color:var(--navy-2)}
 .empty{color:var(--ink-soft);font-size:14px;padding:14px 0;border-top:1px solid var(--line)}
@@ -125,6 +135,7 @@ a:focus-visible{outline:2px solid var(--navy-2);outline-offset:2px}
 <section class="agent"><div class="top"><div class="kicker">Scheduled Agent · 예약 실행 에이전트</div><h1>Farmko 일일 해운·물류 브리핑 에이전트</h1><span class="pill"><span class="dot"></span>활성</span></div><p class="desc">부산발 인도 아대륙·중동 항로(FES/FAGL)를 대상으로, 최근 36시간 이내 국내외 해운·물류 뉴스를 심층 수집·선별해 하우스 포맷 브리핑(PDF)과 이 웹 페이지를 자동으로 생성합니다. 매 실행마다 superpowers · ui-ux-pro-max · stop-slop 스킬을 적용합니다.</p><div class="facts"><div class="fact"><div class="k">스케줄</div><div class="v">매일 09:00 (KST)</div></div><div class="fact"><div class="k">다음 실행</div><div class="v">2026-07-25 09:00 KST</div></div><div class="fact"><div class="k">최근 브리핑</div><div class="v">2026-07-24</div></div><div class="fact"><div class="k">실행 방식</div><div class="v">자동: Windows 예약 작업 (헤드리스) · 수동: 데스크톱 앱에서 /farmko-briefing</div></div></div></section>
 <div class="divider"><h2>최신 브리핑</h2></div>
 <div class="mast"><h3>일일 해운·물류 브리핑</h3><div class="meta">작성일 2026-07-24 · 기준시각(KST) 2026-07-24 09:00 · 최근 36시간</div></div>
+<a class="pdf-btn" href="https://inu-sudo.github.io/farmko-brief-acafb34e/reports/Farmko_Briefing_2026-07-24.pdf" target="_blank" rel="noopener">📄 공식 PDF 브리핑 다운로드</a>
 <section class="key"><div class="eyebrow">오늘의 핵심 이슈</div><ol><li>호르무즈 해협이 사실상 봉쇄된 가운데 후티 반군이 홍해 봉쇄 선언 후 처음으로 사우디 유조선 2척을 공격해 두 관문이 동시에 막혔다.</li><li>브렌트유는 배럴당 100달러를 돌파했고 CMA CGM·머스크는 중동發 긴급 유류할증료를 잇달아 도입했다.</li><li>미국이 24일 0시부로 한국에 강제노동 관세 12.5%를 발효해 한미 15% 상한 합의가 흔들릴 조짐이다.</li></ol></section>
 <div class="context"><b>당사 서비스 항로</b> — 부산발 → 인도서안(문드라INMUN·나바셰바INNSA·피파바브INPAV)·인도동안(콜카타INCCU·첸나이INMAA·카투팔리INKAT)·파키스탄(카라치PKKHI)·중동(소하르OMSOH·칼리파AEKLF) / T/S 포트클랑(MYPKG, +9일) / FES-FAGL 자체 서비스 + 에미레이츠쉬핑라인·판다로지스틱스 대리점 — ※ PLISM 세션 미연결로 금일은 company_context.md 기준항로표(baseline) 적용, 실시간 스케줄 아님.</div>
 <section class="sec">
@@ -158,7 +169,7 @@ a:focus-visible{outline:2px solid var(--navy-2);outline-offset:2px}
 <article class="item"><div class="item-head"><h4>커버리지 체크 — 금일 유효 보도 없음 항목</h4></div><div class="item-meta">자체 점검 · 07-24</div><ul class="bullets"><li>⑨ 한국 항만·수출 개별 동향: 36시간 이내 신규 보도 없음 (관세 이슈는 Ⅳ 참조).</li><li>⑩ 당사 부킹 파트너 선사(우성마리타임·벤라인·늘푸른해운항공·스타오션라인·코리아쉬핑·위동해운·RSSA·KPS해운): 36시간 이내 개별 보도 없음.</li></ul></article>
 </section>
 <div class="divider"><h2>실행 기록 · Run history</h2></div>
-<div class="run"><div class="date">2026-07-24<span class="tag">baseline</span></div><div class="rbody"><p class="sum">호르무즈 해협이 사실상 봉쇄된 가운데 후티 반군이 홍해 봉쇄 선언 후 처음으로 사우디 유조선 2척을 공격해 두 관문이 동시에 막혔다.</p><p class="sub">브렌트유는 배럴당 100달러를 돌파했고 CMA CGM·머스크는 중동發 긴급 유류할증료를 잇달아 도입했다. · 미국이 24일 0시부로 한국에 강제노동 관세 12.5%를 발효해 한미 15% 상한 합의가 흔들릴 조짐이다.</p><div class="m">스윕 55 · 채택 11 · 최근 36시간 · PDF: Farmko_Briefings/2026-07-24/Farmko_Briefing_2026-07-24.pdf</div></div></div>
+<a class="run" href="https://inu-sudo.github.io/farmko-brief-acafb34e/reports/Farmko_Briefing_2026-07-24.pdf" target="_blank" rel="noopener"><div class="date">2026-07-24<span class="tag">baseline</span></div><div class="rbody"><p class="sum">호르무즈 해협이 사실상 봉쇄된 가운데 후티 반군이 홍해 봉쇄 선언 후 처음으로 사우디 유조선 2척을 공격해 두 관문이 동시에 막혔다.</p><p class="sub">브렌트유는 배럴당 100달러를 돌파했고 CMA CGM·머스크는 중동發 긴급 유류할증료를 잇달아 도입했다. · 미국이 24일 0시부로 한국에 강제노동 관세 12.5%를 발효해 한미 15% 상한 합의가 흔들릴 조짐이다.</p><div class="m">스윕 55 · 채택 11 · 최근 36시간</div></div><span class="open">PDF 열기 ↗</span></a>
 <div class="foot"><span class="brand">㈜팜코지엘에스 · FARMKO GLS</span><div class="tnum" style="margin-top:4px">매체 55개 스윕 · 채택 11건 · 최근 36시간 보도 기준 (지수·항만 데이터는 최신 발표분 기준일 별도 표기)</div><div class="qa">품질 점검: superpowers · ui-ux-pro-max · stop-slop 적용 · 36시간 준수</div><div class="qa">이 페이지는 매 실행마다 자동 갱신됩니다.</div></div>
 </div>
 </body>
